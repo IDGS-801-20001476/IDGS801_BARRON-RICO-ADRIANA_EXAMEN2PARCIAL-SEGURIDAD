@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+    {%block content%}
+   
+      
+   <br><br>
+      <div id="magin3">
+          <h3 id="titulo2">Iniciar Sesión</h3>
+          <div class="card-body">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="alert alert-danger">
+                {{ messages[0] }}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <form method="POST" action="/security/login">
+                <div class="form-group">
+                    <label for="email" style="color: black;">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                        aria-describedby="emailHelp" placeholder="Introduce tu correo electrónico" autofocus
+                        required>
+                    <small id="emailHelp" class="form-text text-muted">No compartiremos tu correo electrónico
+                        con nadie
+                        más.</small>
+                </div>
+                <div class="form-group">
+                    <label for="password" style="color: black;">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                        placeholder="Contraseña" required>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="remember">
+                    <label class="form-check-label" for="remember" style="color: black;">Recuérdame</label>
+                </div>
+                <button class="btn btn-danger d-block mx-auto"> Login</button>
+            </form>
+        </div>
+      </div>
+  <br><br><br><br>
+  <footer style="background-color: #faedca;">
+    <h6 id="center">
+    SIGN UP FOR EMAIL AND/OR TEXTS FOR THE LATEST UPDATES, SPECIAL OFFERS, AND MORE.</h6>
+    <h6 id="magin2, justificar">
+    By entering your email address and clicking "Join Us" you agree to receive marketing email messages from Rare Beauty at the email address provided. Unsubscribe at any time. View our Privacy Policy & Terms of Service.
+    </h6>
+  </footer>
+    {%endblock content%}

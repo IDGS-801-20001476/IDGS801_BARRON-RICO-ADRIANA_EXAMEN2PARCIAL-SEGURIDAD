@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/selena-gomez-1625219006.jpg?crop=1.00xw:1.00xh;0,0&resize=640:*"
+            a width="1100" height="300">
+                </div>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                {% if productos == 0 %}
+                <div class="col-md-12 text-center">
+                    <h1 >Error en la página. Actualmente no hay ningún producto.</h1>
+                    </div>
+                </div>
+                {% else %}
+                {% for p in productos %}
+                <br><br>
+                <div class="col-md-3"><br><br>
+                    <div class="card">      
+                        <img id ="img" src="../static/img/{{ p.imagen }}">
+                        <div class="card-body" style="text-align: center;">
+                            <h5 class="card-title" style="color: black;">{{ p.nombre }}</h5>
+                            <p id="jusificar" class="card-text" style="color: black;">{{ p.descripcion }}</p>
+                            <p class="card-text text-end mb-0" style="color: black;"><strong>Precio: ${{ p.precio
+                                    }} US</strong></p>
+                        </div>
+                        <div class="card-footer align-items-center">
+                            <button class="btn btn-danger d-block mx-auto" >Add to car</button>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+    {%block content%}
+<div class="container">
+    <h2 id="titulo">Tu opinión importa.</h2>
+    <form>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico">
+        </div>
+        <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea class="form-control" id="mensaje" rows="4"></textarea>
+        </div>
+        <button class="btn btn-danger d-block mx-auto"> Enviar </button>
+        <br>
+
+        </div>  
+    
+    </form>
+    <footer style="background-color: #faedca;">
+        <h6 id="center">
+        
+            Contáctanos: 
+    <br>
+            Dirección: L.A, California, Estados Unidos.
+            <br>
+            Teléfono: +1 555-555-5555
+            <br>       Email: rarebauty@hotmail.com
+            Redes sociales: @Rare en Twitter, Facebook e Instagram
+            <br>
+            Copyright © 2023 RareBeauty. Todos los derechos reservados.
+       </h6>
+      </footer>
+    
+    {%endblock content%}
